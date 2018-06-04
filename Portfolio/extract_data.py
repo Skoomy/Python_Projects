@@ -32,9 +32,7 @@ def get_page_data(symbol):
     r = requests.get(url)
     cookie = get_cookie_value(r)
 
-    # Code to replace possible \u002F value
-    # ,"CrumbStore":{"crumb":"FWP\u002F5EFll3U"
-    # FWP\u002F5EFll3U
+   
     lines = r.content.decode('unicode-escape').strip(). replace('}', '\n')
     return cookie, lines.split('\n')
 
@@ -52,12 +50,6 @@ def get_data(symbol, start_date, end_date, cookie, crumb):
     with open (filename, 'wb') as handle:
         for block in tqdm(response.iter_content(1024)):
             handle.write(block)
-
-
-#def get_now_epoch():
-    ## @see https://www.linuxquestions.org/questions/programming-9/python-datetime-to-epoch-4175520007/#post5244109
-    #return int(time.time())
-
 
 
 
