@@ -1,0 +1,15 @@
+
+#!/usr/bin/env python3.6
+import pandas as pd 
+
+
+
+class Stock : 
+
+'''
+Define a stock object that hvae several metrics 
+- 
+ source invetopedia 
+
+'''
+

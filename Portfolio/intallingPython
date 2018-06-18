@@ -1,0 +1,45 @@
+
+brew install python2
+brew install python
+
+#################
+mkdir -p ~/opt
+pip install virtualenv
+virtualenv ~/opt/python2.7
+python3.6 -m venv ~/opt/python3.6 --without-pip
+source ~/opt/python3.6/bin/activate && \
+  (curl https://bootstrap.pypa.io/get-pip.py | python) && \
+  deactivate
+
+
+
+
+
+  ############## Ensure this env are available in thepath 
+  cat << 'EOF' >> ~/.bashrc
+ 
+if [ -d "$HOME/opt/python2.7" ]; then
+ export PATH="$HOME/opt/python2.7/bin:$PATH"
+ export MANPATH="$HOME/opt/python2.7/share/man:$MANPATH"
+fi
+ 
+if [ -d "$HOME/opt/python3.6" ]; then
+ export PATH="$HOME/opt/python3.6/bin:$PATH"
+ export MANPATH="$HOME/opt/python3.6/share/man:$MANPATH"
+fi
+ 
+EOF
+
+
+####The ordering of the above will set Python 3.6 as the default when executing python. You must source ~/.bashrc for the changes to take effect in the current terminal. New packages may now be installed as follows:
+
+
+£
+####
+pip3 install jupyter
+
+
+
+
+########## same with brew 
+
