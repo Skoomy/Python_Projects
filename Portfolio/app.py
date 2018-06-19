@@ -1,12 +1,16 @@
 
-#!/usr/bin/env python3
-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import dash 
-#import dash_core_components as dcc 
-#import dash_html_components as html 
+import dash_core_components as dcc 
+import dash_html_components as html 
 
 
-app = dash.DASH()
+import sys 
+
+print(sys.prefix)
+
+app = dash.Dash()
 
 app.layout = html.Div('Dashboard')
 
